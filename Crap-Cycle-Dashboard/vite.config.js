@@ -3,13 +3,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // server: {
-  //   // proxy: {
-  //   //   '/api': {
-  //   //     target: 'https://lytte-backend.onrender.com', // Your backend server
-  //   //     changeOrigin: true,
-  //   //     // rewrite: (path) => path.replace(/^\/api/, ''),
-  //   //   },
-  //   // },
-  // },
+  preview: {
+    port: Number(process.env.PORT) || 4173,
+    host: true,
+    allowedHosts: ['combined-f-and-b-frontend.onrender.com'], // add your render domain here
+  },
 });
