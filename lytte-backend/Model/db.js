@@ -8,7 +8,8 @@ export const db = mysql.createConnection({
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABSE ,
     ssl: {
-        ca: fs.readFileSync('Model/ca.pem') // Adjust the path to your CA certific
+        rejectUnauthorized: false
+        //ca: fs.readFileSync('Model/ca.pem') // Adjust the path to your CA certific
     }
 });
 
